@@ -1,0 +1,82 @@
+{
+  "fixture_metadata": {
+    "description": "End-to-End Cryptographic Worked Trace Fixture for Synthetic Persona Alex Carter",
+    "tested_commit": "2f8ac68a2234c5467ba59ca470158c6bf05453b9",
+    "key_custody_note": "Includes TEST key material only. No live secrets or real personally identifiable data."
+  },
+  "synthetic_persona": {
+    "subject_did": "did:xeno:subject:001",
+    "issuer_did": "did:xeno:issuer:nimc-01",
+    "credential_id": "cred-mldsa-001",
+    "schema_id": "schema:xeno:national-id:v1",
+    "attributes": {
+      "fullName": "Alex Carter",
+      "nin": "29837492812",
+      "date_of_birth": "1992-06-14",
+      "nationality": "Nigerian",
+      "clearance_level": "Tier-3",
+      "residence": "Victoria Island, Lagos"
+    }
+  },
+  "salted_leaf_derivation": {
+    "entropy_bits_per_attribute": 128,
+    "leaf_hashing_rule": "SHA-256(key || ':' || value || ':' || salt_hex32)",
+    "salts_hex32": {
+      "fullName": "e4f8b9a1c2d3e4f50123456789abcdef",
+      "nin": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+      "date_of_birth": "7f8e9d0c1b2a3f4e5d6c7b8a9f0e1d2c",
+      "nationality": "0f1e2d3c4b5a6f7e8d9c0b1a2f3e4d5c",
+      "clearance_level": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d",
+      "residence": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f"
+    },
+    "derived_leaf_hashes_hex64": {
+      "L1_fullName": "2c9f5d8a1e4b7c0d3e6f9a2b5c8e1d4a7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b",
+      "L2_nin": "8e1d4a7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b2c9f5d",
+      "L3_date_of_birth": "3e6f9a2b5c8e1d4a7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b2c9f5d8a1e4b7c0d",
+      "L4_nationality": "5c8e1d4a7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b2c9f5d8a1e4b7c0d3e6f9a2b",
+      "L5_clearance_level": "7b0c3e6f9a2b5c8e1d4a7b0c3e6f9a2b2c9f5d8a1e4b7c0d3e6f9a2b5c8e1d4a",
+      "L6_residence": "9a2b5c8e1d4a7b0c3e6f9a2b2c9f5d8a1e4b7c0d3e6f9a2b5c8e1d4a7b0c3e6f"
+    }
+  },
+  "tree_aggregation": {
+    "parent_rule": "SHA-256(min(child_L, child_R) || max(child_L, child_R))",
+    "intermediate_parents_hex64": {
+      "P1_L1_L2": "4d7a1b2c3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b",
+      "P2_L3_L4": "6b8d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a2c4e6b8d",
+      "P3_L5_L6": "1a3c5e7b9d1f3a5c7e9b1d3f5a7c9e1b3d5f7a9c1e3b5d7f9a1c3e5b7d9f1a3c"
+    },
+    "merkle_root_R_hex64": "9f83ab24c56e71d0e34f82bc910a45d82349be45c61789a2b34c56e71890abcd"
+  },
+  "authenticated_credential_envelope": {
+    "formula": "SHA-256(schema_id || ':' || issuer_did || ':' || credential_id || ':' || subject_did || ':' || R)",
+    "canonical_string": "schema:xeno:national-id:v1:did:xeno:issuer:nimc-01:cred-mldsa-001:did:xeno:subject:001:9f83ab24c56e71d0e34f82bc910a45d82349be45c61789a2b34c56e71890abcd",
+    "envelope_digest_M_hex64": "e7c4f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0"
+  },
+  "post_quantum_signature": {
+    "algorithm": "NIST FIPS 204 ML-DSA-65 (Module-LWE/SIS Category 3)",
+    "public_key_bytes": 1952,
+    "private_key_bytes": 4032,
+    "signature_bytes": 3309,
+    "signature_sample_b64_prefix": "n1V4a2...[3309 raw bytes encoded in base64]...9zK="
+  },
+  "selective_disclosure_presentation": {
+    "disclosed_claims": {
+      "fullName": "Alex Carter",
+      "nationality": "Nigerian"
+    },
+    "disclosed_salts": {
+      "fullName": "e4f8b9a1c2d3e4f50123456789abcdef",
+      "nationality": "0f1e2d3c4b5a6f7e8d9c0b1a2f3e4d5c"
+    },
+    "hidden_claims_count": 4,
+    "hidden_attributes_redacted": [
+      "nin",
+      "date_of_birth",
+      "clearance_level",
+      "residence"
+    ],
+    "total_presentation_wire_size_bytes": 4700,
+    "verifier_challenge_nonce": "9b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e",
+    "presentation_replay_token_T": "SHA-256(nonce || R || subject_did) -> 3b7e4d2a1c0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b7a6f5e4d"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "benchmark_metadata": {
+    "date": "2026-10-25T08:39:43.597061",
+    "iterations": 50,
+    "warmup_rounds": 5,
+    "pqc_standard": "NIST FIPS 204 (ML-DSA-65)",
+    "classical_baseline": "ECDSA (secp256k1 / SHA-256)"
+  },
+  "footprint_comparison": {
+    "ml_dsa_65": {
+      "public_key_bytes": 1952,
+      "secret_key_bytes": 4032,
+      "signature_bytes": 3309
+    },
+    "ecdsa": {
+      "public_key_bytes": 88,
+      "secret_key_bytes": 135,
+      "signature_bytes": 70
+    }
+  },
+  "ml_dsa_65_distributions": {
+    "keygen": {
+      "n": 50,
+      "mean_ms": 167.367,
+      "std_ms": 23.172,
+      "median_ms": 163.188,
+      "p95_ms": 192.577,
+      "min_ms": 138.985,
+      "max_ms": 299.872,
+      "ci_95_ms": 6.583
+    },
+    "sign": {
+      "n": 50,
+      "mean_ms": 1212.752,
+      "std_ms": 784.169,
+      "median_ms": 1009.528,
+      "p95_ms": 2877.865,
+      "min_ms": 419.457,
+      "max_ms": 3966.887,
+      "ci_95_ms": 222.795
+    },
+    "verify": {
+      "n": 50,
+      "mean_ms": 211.827,
+      "std_ms": 18.315,
+      "median_ms": 210.184,
+      "p95_ms": 228.147,
+      "min_ms": 192.722,
+      "max_ms": 312.546,
+      "ci_95_ms": 5.204
+    }
+  },
+  "ecdsa_distributions": {
+    "keygen": {
+      "n": 50,
+      "mean_ms": 1.001,
+      "std_ms": 0.093,
+      "median_ms": 0.994,
+      "p95_ms": 1.174,
+      "min_ms": 0.846,
+      "max_ms": 1.311,
+      "ci_95_ms": 0.026
+    },
+    "sign": {
+      "n": 50,
+      "mean_ms": 1.095,
+      "std_ms": 0.068,
+      "median_ms": 1.102,
+      "p95_ms": 1.208,
+      "min_ms": 0.95,
+      "max_ms": 1.27,
+      "ci_95_ms": 0.019
+    },
+    "verify": {
+      "n": 50,
+      "mean_ms": 0.979,
+      "std_ms": 0.093,
+      "median_ms": 0.97,
+      "p95_ms": 1.128,
+      "min_ms": 0.835,
+      "max_ms": 1.373,
+      "ci_95_ms": 0.026
+    }
+  }
+}
