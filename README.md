@@ -80,4 +80,3 @@ Frontend Web Dashboard will be accessible at: `http://localhost:5173/`
 2. **Demonstrate Selective Disclosure:** Open the **"Selective Disclosure Playground"**, toggle between disclosing "Name" and "Nationality" while keeping "NIN" and "Date of Birth" hidden. Click **"Verify Proof"** to see instant positive verification (~50ms).
 3. **Demonstrate Tamper Resistance (Negative Testing):** Click **"Simulate Tamper Attack"**; the verifier immediately rejects the altered payload with an explicit Merkle integrity violation.
 4. **Generate Chapter 4 Data:** Open the **"Benchmarks & Metrics"** tab, run 20 or 50 trials, and copy the calculated Mean, Median, and $p_{95}$ tail latencies directly into Chapter 4.
-"# xenoverify" 

@@ -1,6 +1,6 @@
 # DATED FORMATIVE HEURISTIC USABILITY INSPECTION RECORD
-**Candidate & Inspector:** James Olushola Atolagbe (James Atolagbe)  
-**Degree:** Master of Research (MRes) in Cybersecurity  
+**Candidate & Inspector:** Olushola James  Atolagbe (James Atolagbe)  
+**Degree:** Master of Research (MRes) in Computing  
 **Institution:** School of Computing, Engineering & the Built Environment, Edinburgh Napier University  
 **Date of Inspection:** October 25, 2026  
 **Prototype Inspected:** Xenoverify Version 1.0 (Git Commit: `2f8ac68a2234c5467ba59ca470158c6bf05453b9`)  
